@@ -12,13 +12,13 @@ url: "https://rodericklab.github.io"
 # Footer info: adapt to lab details
 affiliation: >
   Roderick Lab<br/>
-  Department of XYZ<br/>
-  University of Somewhere
+  Department of Cardiovascular Sciences<br/>
+  KU Leuven
 
 location: >
-  University of Somewhere<br/>
-  123 Science Rd<br/>
-  City, State, ZIP
+  KU Leuven<br/>
+  Herestraat 49<br/>
+  3000 Leuven, Belgium
 
 contact: >
   <a href="mailto:contact@rodericklab.org" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact the Roderick Lab</a> <br/>
@@ -37,11 +37,12 @@ nav_pages:
   - name: teaching
   - name: blogs
 
+# Files and folders to include when building the site
 include:
   - .htaccess
   - _pages
 
-# Conversion
+# C# Markdown processing settings
 markdown: kramdown
 highlighter: rouge
 lsi: false
@@ -60,18 +61,19 @@ kramdown:
   enable_coderay: false
   parse_block_html: true # default for kramdown is false. This will enable using Markdown links
 
-
+# Plugins used
 plugins:
   - jekyll-scholar
 
+# Configuration for jekyll-scholar plugin for bibliography management
 scholar:
   last_name: Doe
   first_name: [John]
 
-  style: citesty
+  style: citestyle 
   locale: en
 
-  source: /assets/
+  source: assets    # Removed leading slash for relative path consistency
   bibliography: ref.bib
   bibliography_template: bibtemplate
   sort_by: year, month
@@ -89,10 +91,11 @@ scholar:
   bibliography_list_attributes:
     reversed: "reversed"
 
+# Exclude these files from the build
 exclude:
   - Gemfile
   - Gemfile.lock
-  - update_boostrap.sh
+  - update_bootstrap.sh
   - switch_theme.sh
   - tags
   - Rakefile
